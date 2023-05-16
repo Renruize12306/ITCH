@@ -151,7 +151,8 @@ class ts:
 
         return heat, mask, tgrid2, pgrid2
 
-    def plot_liquidity_heatmap(self,t_boud=[34200000000000,57600000000000],
+    # def plot_liquidity_heatmap(self,t_boud=[34200000000000,57600000000000],
+    def plot_liquidity_heatmap(self,t_boud=[44400000000000,45200000000000],
                                 p_boud=[0,999999],
                                 n_t=400,n_p=100,
                                 levels=100):
@@ -359,4 +360,6 @@ if __name__ == '__main__':
         PATH = os.path.dirname(os.path.realpath(__file__))
     a = ts(date,venue,stock,PATH,20)
     a.plot_liquidity_heatmap()
+    # a.plot_order_book(500)
+    # a.plot_order_book(32638206150312, False)
 

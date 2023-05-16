@@ -138,6 +138,23 @@ Here we report detailed description of message file output of the program:
 
 At discrete time T1,T2,T3,... an output will be released by NASDAQ, the field names may have different meaning depending on the type of message. Hence here we will give a detailed description of the message csv.
 
+Type A
+(Side == 1 => Ask Side)
+(Side == 0 => Bid Side)
+
+Type E
+(Side == 1 => Ask Side)
+(Side == 0 => Bid Side)
+
+```
+[-] A,F --> (A)dd
+[-] D,X --> (D)elete
+[-] U --> (R)eplace
+[-] E --> (E)xecution
+[-] P --> P, hidden execution
+[-] C --> C, execution at different price
+```
+
 | time | type | id     | side                   | size                                                        | price                                      | cancSize                      | execSize                    | oldId        | oldSize                           | oldPrice                          | MPID                                                 |
 |------|------|--------|------------------------|-------------------------------------------------------------|--------------------------------------------|-------------------------------|-----------------------------|--------------|-----------------------------------|-----------------------------------|------|
 | ...  | A    | ...    | ...                    | added size                                                  | limit price of the add order               | -                             | -                           | -            | -                                 | -                                 | mpid of the market partecipant who issued the order  |
@@ -171,6 +188,24 @@ sudo mkdir build
 sudo cmake ..
 sudo make
 sudo cp *.a /usr/lib
+```
+
+```
+git clone https://github.com/RaisinTen/googletest.git
+cd googletest        # Main directory of the cloned repository.
+git checkour fix--Wdouble-promotion-compilation-warning
+mkdir build          # Create a directory to hold the build output.
+cd build
+cmake ..             # Generate native build scripts for GoogleTest.
+
+export CC=/opt/homebrew/bin/gcc-11
+export CXX=/opt/homebrew/bin/g++-11
+unalias g++
+unalias gcc
+
+
+make
+sudo make install    # Install in /usr/local/ by default
 ```
 
 To run the tests:

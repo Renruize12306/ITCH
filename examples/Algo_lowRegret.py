@@ -55,6 +55,6 @@ class low_regret(Algo):
 
 if __name__=='__main__':
     s = low_regret([1,2,3,4,5]);
-    a = environment.ts('01302019','NASDAQ','ACAD')
+    a = environment.ts('01302020','NASDAQ','INTC')
     s.run(a)
     s.plot()

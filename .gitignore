@@ -17,3 +17,7 @@ doc/latex/*
 *.pyc
 bin/*
 data/.DS_Store
+googletest/
+.vscode/
+examples/test.dSYM/*
+examples/testFolder/*

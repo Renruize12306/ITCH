@@ -1,4 +1,4 @@
-CXXFLAGS += -Wall -std=c++11 \
+CXXFLAGS += -Wall -std=c++14 \
    -Werror \
    -Wextra \
    -Wconversion \
@@ -18,7 +18,7 @@ CXXFLAGS += -Wall -std=c++11 \
    -Wswitch-default \
    -MMD \
    -O3 \
-#   -Wundef
+   -I/usr/local/include
 
 CPPFLAGS += -I$(INC_DIR)
 
@@ -26,7 +26,8 @@ LDFLAGS += 	-lgtest_main \
 			-lgtest \
 			-lpthread \
 			-pthread \
-			-lgmock
+			-lgmock \
+			-L/usr/local/lib
 
 EXE = BookConstructor
 EXE_TEST = executeTests

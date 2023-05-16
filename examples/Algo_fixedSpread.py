@@ -54,6 +54,7 @@ class fixed_spread(Algo):
 
 if __name__=='__main__':
     s = fixed_spread(10);
-    a = environment.ts('08302018','PSX','AAPL')
+    a = environment.ts('01302020','NASDAQ','INTC')
+    
     s.run(a)
     s.plot()
